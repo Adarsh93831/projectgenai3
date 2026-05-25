@@ -62,7 +62,7 @@ function DashboardPage() {
           onSelectDocument={setSelectedDocumentId}
         />
 
-        <section className="flex min-h-full flex-1 flex-col bg-[var(--panel-soft)] p-4 sm:p-6">
+        <section className="flex min-h-full flex-1 flex-col bg-(--panel-soft) p-4 sm:p-6">
           <div className="grid gap-4 md:grid-cols-2">
             <UploadButton
               onUpload={uploadDocument}
@@ -70,9 +70,9 @@ function DashboardPage() {
               progress={uploadProgress}
             />
 
-            <div className="rounded-3xl border border-[var(--line)] bg-[var(--panel)] p-4 sm:p-5">
+            <div className="rounded-3xl border border-(--line) bg-(--panel) p-4 sm:p-5">
               <h2 className="text-lg font-semibold">Workspace Status</h2>
-              <p className="mt-2 text-sm text-[var(--text-muted)]">
+              <p className="mt-2 text-sm text-(--text-muted)">
                 {selectedDocument
                   ? `Active: ${selectedDocument.title}`
                   : "Select a document from the sidebar."}
@@ -90,15 +90,15 @@ function DashboardPage() {
               <button
                 type="button"
                 onClick={handleLogout}
-                className="mt-4 rounded-2xl border border-[var(--line)] bg-white/70 px-3 py-2 text-sm font-semibold text-[var(--text-main)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                className="mt-4 rounded-2xl border border-(--line) bg-white/70 px-3 py-2 text-sm font-semibold text-(--text-main) transition hover:border-(--accent) hover:text-(--accent)"
               >
                 Logout
               </button>
             </div>
           </div>
 
-          <div className="mt-4 flex flex-1 flex-col overflow-hidden rounded-3xl border border-[var(--line)] bg-[var(--panel)]">
-            <div className="border-b border-[var(--line)] px-4 py-3 sm:px-5 sm:py-4">
+          <div className="mt-4 flex flex-1 flex-col overflow-hidden rounded-3xl border border-(--line) bg-(--panel)">
+            <div className="border-b border-(--line) px-4 py-3 sm:px-5 sm:py-4">
               <h2 className="text-lg font-semibold">RAG Chat</h2>
             </div>
 
@@ -113,12 +113,12 @@ function DashboardPage() {
                     />
                   ))
                 ) : (
-                  <p className="text-sm text-[var(--text-muted)]">
+                  <p className="text-sm text-(--text-muted)">
                     Ask a question about this document to start the conversation.
                   </p>
                 )
               ) : (
-                <p className="text-sm text-[var(--text-muted)]">
+                <p className="text-sm text-(--text-muted)">
                   Select a document to enable chat.
                 </p>
               )}

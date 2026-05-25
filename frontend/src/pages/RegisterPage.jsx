@@ -34,19 +34,19 @@ function RegisterPage() {
         <div className="auth-orb auth-orb-2" />
 
         <div className="relative z-10">
-          <p className="inline-flex rounded-full border border-[var(--line)] bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          <p className="inline-flex rounded-full border border-(--line) bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-(--text-muted)">
             PDF Query AI
           </p>
           <h1 className="mt-4 text-3xl font-bold tracking-tight">Create your account</h1>
-          <p className="mt-2 text-sm text-[var(--text-muted)]">
+          <p className="mt-2 text-sm text-(--text-muted)">
             Start building a searchable knowledge workspace from PDFs.
           </p>
 
           <form className="stagger mt-7 space-y-4" onSubmit={handleSubmit}>
             <label className="block text-sm">
-              <span className="mb-1.5 inline-block font-medium text-[var(--text-muted)]">Full name</span>
-              <div className="flex items-center gap-2 rounded-2xl border border-[var(--line)] bg-white/65 px-3">
-                <UserRound size={16} className="text-[var(--text-muted)]" />
+              <span className="mb-1.5 inline-block font-medium text-(--text-muted)">Full name</span>
+              <div className="flex items-center gap-2 rounded-2xl border border-(--line) bg-white/65 px-3">
+                <UserRound size={16} className="text-(--text-muted)" />
                 <input
                   type="text"
                   required
@@ -54,16 +54,16 @@ function RegisterPage() {
                   onChange={(event) =>
                     setForm((prev) => ({ ...prev, fullName: event.target.value }))
                   }
-                  className="w-full bg-transparent py-3 text-sm outline-none placeholder:text-[var(--text-muted)]/80"
+                  className="w-full bg-transparent py-3 text-sm outline-none placeholder:text-(--text-muted)/80"
                   placeholder="Ava Johnson"
                 />
               </div>
             </label>
 
             <label className="block text-sm">
-              <span className="mb-1.5 inline-block font-medium text-[var(--text-muted)]">Email</span>
-              <div className="flex items-center gap-2 rounded-2xl border border-[var(--line)] bg-white/65 px-3">
-                <Mail size={16} className="text-[var(--text-muted)]" />
+              <span className="mb-1.5 inline-block font-medium text-(--text-muted)">Email</span>
+              <div className="flex items-center gap-2 rounded-2xl border border-(--line) bg-white/65 px-3">
+                <Mail size={16} className="text-(--text-muted)" />
                 <input
                   type="email"
                   required
@@ -71,16 +71,16 @@ function RegisterPage() {
                   onChange={(event) =>
                     setForm((prev) => ({ ...prev, email: event.target.value }))
                   }
-                  className="w-full bg-transparent py-3 text-sm outline-none placeholder:text-[var(--text-muted)]/80"
+                  className="w-full bg-transparent py-3 text-sm outline-none placeholder:text-(--text-muted)/80"
                   placeholder="you@company.com"
                 />
               </div>
             </label>
 
             <label className="block text-sm">
-              <span className="mb-1.5 inline-block font-medium text-[var(--text-muted)]">Password</span>
-              <div className="flex items-center gap-2 rounded-2xl border border-[var(--line)] bg-white/65 px-3">
-                <LockKeyhole size={16} className="text-[var(--text-muted)]" />
+              <span className="mb-1.5 inline-block font-medium text-(--text-muted)">Password</span>
+              <div className="flex items-center gap-2 rounded-2xl border border-(--line) bg-white/65 px-3">
+                <LockKeyhole size={16} className="text-(--text-muted)" />
                 <input
                   type="password"
                   required
@@ -89,7 +89,7 @@ function RegisterPage() {
                   onChange={(event) =>
                     setForm((prev) => ({ ...prev, password: event.target.value }))
                   }
-                  className="w-full bg-transparent py-3 text-sm outline-none placeholder:text-[var(--text-muted)]/80"
+                  className="w-full bg-transparent py-3 text-sm outline-none placeholder:text-(--text-muted)/80"
                   placeholder="At least 6 characters"
                 />
               </div>
@@ -104,15 +104,15 @@ function RegisterPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-2xl bg-[var(--accent)] px-4 py-3 text-sm font-semibold text-[var(--accent-ink)] transition hover:translate-y-[-1px] hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-60"
+              className="w-full rounded-2xl bg-(--accent) px-4 py-3 text-sm font-semibold text-(--accent-ink) transition hover:-translate-y-px hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {loading ? "Creating account..." : "Create Account"}
             </button>
           </form>
 
-          <p className="mt-6 text-center text-sm text-[var(--text-muted)]">
+          <p className="mt-6 text-center text-sm text-(--text-muted)">
             Already have an account?{" "}
-            <Link to="/login" className="font-semibold text-[var(--accent)] underline decoration-transparent transition hover:decoration-[var(--accent)]">
+            <Link to="/login" className="font-semibold text-(--accent) underline decoration-transparent transition hover:decoration-(--accent)">
               Sign in
             </Link>
           </p>
