@@ -29,10 +29,10 @@ const register = asyncHandler(async (req, res) => {
   const accessToken = user.generateToken();
   const createdUser = await User.findById(user._id).select("-password");
   const isProduction = process.env.NODE_ENV === "production";
-  const cookieOptions ={
+  const cookieOptions = {
     httpOnly: true,
     secure: isProduction,
-    sameSite: "Strict",
+    sameSite: isProduction ? "none" : "lax",
   };
 
   return res
@@ -68,7 +68,7 @@ const login = asyncHandler(async (req, res) => {
   const cookieOptions = {
     httpOnly: true,
     secure: isProduction,
-    sameSite: "Strict",
+    sameSite: isProduction ? "none" : "lax",
   };
 
   return res
@@ -85,7 +85,7 @@ const logout = asyncHandler(async (_req, res) => {
     .clearCookie("accessToken", {
       httpOnly: true,
       secure: isProduction,
-      sameSite: "Strict",
+      sameSite: isProduction ? "none" : "lax",
     })
     .json(new ApiResponse(200, {}, "User logged out successfully"));
 });

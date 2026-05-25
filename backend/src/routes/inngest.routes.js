@@ -11,6 +11,7 @@ inngestRouter.use(
   serve({
     client: inngestClient,
     functions: [processPdfWorkflow],
+    signingKey: process.env.INNGEST_SIGNING_KEY,
   })
 );
 

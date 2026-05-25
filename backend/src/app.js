@@ -9,14 +9,18 @@ import { documentRouter } from "./routes/document.routes.js";
 import { inngestRouter } from "./routes/inngest.routes.js";
 import { ApiResponse } from "./utils/ApiResponse.js";
 
+const isProduction = process.env.NODE_ENV === "production";
+
 const app = express();
+
+if (isProduction) {
+  app.set("trust proxy", 1);
+}
 
 const envOrigins = (process.env.CORS_ORIGIN || "")
   .split(",")
   .map((origin) => origin.trim())
   .filter(Boolean);
-
-const isProduction = process.env.NODE_ENV === "production";
 
 const isDevLoopbackOrigin = (origin) =>
   /^http:\/\/(localhost|127\.0\.0\.1):(\d+)$/.test(origin);
